@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fairy tales</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/modern-normalize.min.css">
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ponomar&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Подключени SDK для отправки сообщений с сайта через EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-block">
+            <img src="img/logoRound.png" alt="logo">
+            <div class="site-title" data-key="siteTitle">Сказки Соломии</div>
+        </div>
+
+        <!-- Бургер-кнопка -->
+        <button class="burger" id="burger">&#9776;</button>
+
+        <!-- Выпадающий список языков для мобильных -->
+        <div class="mobile-lang">
+            <select id="language-select" onchange="setLang(this.value)">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+                <option value="ua">UA</option>
+                <option value="it">IT</option>
+            </select>
+        </div>
+
+        <!-- Мобильное бургер-меню -->
+        <div class="mobile-menu hidden" id="mobileMenu">
+            <h3 class="mobile-menu-title" data-key="homeMobMenuTitle">⸺❈ Сказки по коллекциям ❈⸺</h3>
+            <ul class="mobile-menu-list" id="mobileMenuList"></ul>
+        </div>
+
+
+        <nav class="nav-links">
+            <a href="#" onclick="loadPage('home')" data-key="home">Home</a>
+            <a href="#" onclick="loadPage('about')" data-key="about">About</a>
+            <a href="#" onclick="loadPage('reviews')" data-key="reviews">Reviews</a>
+            <a href="#" onclick="loadPage('register')" data-key="register">Register</a>
+        </nav>
+        <!-- Языковые кнопки для обычных экранов -->
+        <div class="desktop-lang">
+            <button class="lang-btn" onclick="setLang('ua')">UA</button>
+            <button class="lang-btn" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('it')">IT</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Боковое меню -->
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li class="collection-title" data-key="collection1">
+                    <ul>
+                        <li class="story-title"><a href="#" onclick="loadPage('story101')" data-key="story101">story
+                                title</a>
+                        </li>
+                        <li class="story-title"><a href="#" onclick="loadPage('story102')" data-key="story102">story
+                                title</a>
+                        </li>
+                        <li class="story-title"><a href="#" onclick="loadPage('story103')" data-key="story103">story
+                                title</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="collection-title" data-key="collection2">
+                    <ul>
+                        <li class="story-title"><a href="#" onclick="loadPage('story201')" data-key="story201">story
+                                title</a>
+                        </li>
+                        <li class="story-title"><a href="#" onclick="loadPage('story202')" data-key="story202">story
+                                title</a>
+                        </li>
+                        <li class="story-title"><a href="#" onclick="loadPage('story203')" data-key="story203">story
+                                title</a>
+                        </li>
+                        <li class="story-title"><a href="#" onclick="loadPage('story204')" data-key="story204">story
+                                title</a>
+                        </li>
+                        <li class="story-title"><a href="#" onclick="loadPage('story205')" data-key="story205">story
+                                title</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="collection-title" data-key="collection3">
+                    <ul>
+                        <li class="story-title"><a href="#" onclick="loadPage('story301')" data-key="story301">story
+                                title</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </aside>
+        <main class="content" id="content">
+            <!-- Loaded content will appear here -->
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-branding">
+                <p class="footer-author" data-key="footerAuthor">Автор: Соломия</p>
+            </div>
+            <p class="footer-copy" data-key="footerCopy">&copy; 2025 Волшебный мир Соломии. Все права защищены.</p>
+            <div class="footer-links">
+                <div><a href="#" onclick="loadPage('privacy')" data-key="footerPriv">Политика конфиденциальности</a>
+                </div>
+                <div><a href="#" onclick="loadPage('contacts')" data-key="footerContacts">Контакты</a></div>
+
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="icons/facebook.png"
+                            alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img
+                            src="icons/instagram.png" alt="Instagram"></a>
+                    <a href="https://t.me" target="_blank" aria-label="Telegram"><img src="icons/telegram.png"
+                            alt="Telegram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p class="cookie-text">We use cookies to improve the performance of our website.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-accept">Accept</button>
+            <button class="cookie-decline">Reject</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

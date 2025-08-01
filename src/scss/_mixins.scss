@@ -1,0 +1,17 @@
+// @mixin border-radius($radius) {
+// 	-webkit-border-radius: $radius;
+// 	-moz-border-radius: $radius;
+// 	-ms-border-radius: $radius;
+// 	border-radius: $radius;
+// }
+
+@mixin btn-light ($size) {
+	background-color: $bg-btn;
+	border: none;
+	padding: 8px 14px;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.3s ease;
+}

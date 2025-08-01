@@ -1,0 +1,117 @@
+[
+    {
+        "id": "story101",
+        "date": "2025-07-10",
+        "image": "img/story101/ravenButterfly.jpg",
+        "translations": {
+            "ru": {
+                "title": "Сказка о золотой бабочке",
+                "intro": "В далёком королевстве, где горы касались облаков, а реки пели песни, жила молодая прекрасная девушка по имени Айлиара. Она была дочерью простого садовника, но у неё было особое дарование — она умела понимать эмоции магических существ, животных и растений. \n Однажды утром, ..."
+            },
+            "en": {
+                "title": "The Tale of the Golden Butterfly",
+                "intro": "In a distant kingdom where mountains touched the clouds and rivers sang songs, there lived a young and beautiful girl named Ailiara. She was the daughter of a simple gardener, but she possessed a special gift — she could understand the emotions of magical creatures, animals, and plants. \n One morning,..."
+            },
+            "ua": {
+                "title": "Казка про золотого метелика",
+                "intro": "У далекому королівстві, де гори торкалися хмар, а річки співали пісні, жила молода прекрасна дівчина на ім'я Айліара. Вона була дочкою простого садівника, але мала особливий дар — вміла розуміти емоції магічних істот, тварин і рослин. \n Одного ранку..."
+            },
+            "it": {
+                "title": "La Favola della Farfalla Dorata",
+                "intro": "In un regno lontano, dove le montagne sfioravano le nuvole e i fiumi cantavano melodie, viveva una giovane e bella ragazza di nome Ailiara. Era figlia di un semplice giardiniere, ma aveva un dono speciale: riusciva a comprendere le emozioni delle creature magiche, degli animali e delle piante. \n Una mattina..."
+            }
+        }
+    },
+    {
+        "id": "story102",
+        "date": "2025-07-12",
+        "image": "img/story102/unicornPresent.jpg",
+        "translations": {
+            "ru": {
+                "title": "Путь домой для лунного единорога",
+                "intro": "Прошло время, Айлиара, как обычно, ухаживала за своим садом, когда услышала тихий плач из-за ограды. Она пошла на звук и обнаружила маленького единорожка..."
+            },
+            "en": {
+                "title": "The Moon Unicorn's Journey Home",
+                "intro": "Time had passed, and Ailara was tending to her garden as usual when she heard quiet crying from beyond the fence. She followed the sound and discovered a little unicorn..."
+            },
+            "ua": {
+                "title": "Шлях додому для місячного єдинорога",
+                "intro": "Минув час, Айліара, як завжди, доглядала свій сад, коли почула тихий плач з-за огорожі. Вона пішла на звук і побачила маленького єдиноріжка..."
+            },
+            "it": {
+                "title": "La Strada di Casa per l'Unicorno Lunare",
+                "intro": "Era passato del tempo. Ailara, come al solito, si prendeva cura del suo giardino quando sentì un pianto sommesso dall'altro lato della siepe. Seguì il suono e scoprì un piccolo unicorno..."
+            }
+        }
+    },
+    {
+        "id": "story103",
+        "date": "2025-07-30",
+        "image": "img/story103/AiliaraFPrince.jpg",
+        "translations": {
+            "ru": {
+                "title": "Сказка об украденной власти",
+                "intro": "Однажды вечером Айлиара заметила странное свечение у старого колодца. Приблизившись, она увидела маленькое существо не больше её ладони. У него были мерцающие крылья, тонкие как паутина... \n — Ты фэйри? — удивлённо спросила Айлиара..."
+            },
+            "en": {
+                "title": "The Tale of the Stolen Power",
+                "intro": "One evening Ailiara noticed a strange glow near the old well. Approaching, she saw a small creature no larger than her palm. It had shimmering wings, thin as spider webs... \n \"Are you a fairy?\" asked Ailiara in surprise..."
+            },
+            "ua": {
+                "title": "Казка про вкрадену владу",
+                "intro": "Одного вечора Айліара помітила дивне сяйво біля старого колодязя. Наблизившись, вона побачила маленьку істоту завбільшки з її долоню. У неї були мерехтливі крила, тонкі як павутиння... \n — Ти фейрі? — здивовано запитала Айліара..."
+            },
+            "it": {
+                "title": "La Fiaba del Potere Rubato",
+                "intro": "Una sera Ailiara notò uno strano bagliore presso il vecchio pozzo. Avvicinandosi, vide una piccola creatura non più grande del suo palmo. Aveva ali scintillanti, sottili come ragnatele... \n \"Sei un fairy?\" chiese Ailiara sorpresa..."
+            }
+        }
+    },
+    {
+        "id": "story201",
+        "date": "2025-07-31",
+        "image": "img/story201/princessUnderTheMoon.jpg",
+        "translations": {
+            "ru": {
+                "title": "Лунная сказка",
+                "intro": "В далёком королевстве, где горы касались облаков, жила принцесса Селена. Она была известна своей добротой и любовью ко всему живому. Каждую ночь принцесса выходила в королевский сад, чтобы полюбоваться луной и покормить лесных зверушек..."
+            },
+            "en": {
+                "title": "Moonlight Tale",
+                "intro": "In a distant kingdom, where mountains touched the clouds, lived Princess Selena. She was known for her kindness and love for all living things. Every night the princess would go out to the royal garden to admire the moon and feed the forest creatures..."
+            },
+            "ua": {
+                "title": "Місячна казка",
+                "intro": "У далекому королівстві, де гори торкалися хмар, жила принцеса Селена. Вона була відома своєю добротою та любов'ю до всього живого. Щоночі принцеса виходила до королівського саду, щоб помилуватися місяцем і погодувати лісових звірят..."
+            },
+            "it": {
+                "title": "La fiaba della Luna",
+                "intro": "In un regno lontano, dove le montagne toccavano le nuvole, viveva la principessa Selena. Era conosciuta per la sua bontà e il suo amore per tutti gli esseri viventi. Ogni notte la principessa usciva nel giardino reale per ammirare la luna e nutrire gli animali del bosco..."
+            }
+        }
+    },
+    {
+        "id": "story202",
+        "date": "2025-08-01",
+        "image": "img/story202/Lina.jpg",
+        "translations": {
+            "ru": {
+                "title": "Шёпот леса",
+                "intro": "ВВ далёком Изумрудном лесу жила молодая целительница Лина. Она знала каждую тропинку, каждое дерево, и все лесные жители доверяли ей... Лина собирала травы, лечила раненых зверей и считала себя настоящей хранительницей леса..."
+            },
+            "en": {
+                "title": "The Forest's Whisper",
+                "intro": "IIn the distant Emerald Forest lived a young healer named Lina. She knew every path, every tree, and all the forest dwellers trusted her... Lina gathered herbs, healed wounded animals, and considered herself a true guardian of the forest..."
+            },
+            "ua": {
+                "title": "Шепіт лісу",
+                "intro": "У далекому Смарагдовому лісі жила молода цілителька Ліна. Вона знала кожну стежку, кожне дерево, і всі лісові мешканці довіряли їй... Ліна збирала трави, лікувала поранених звірів і вважала себе справжньою охоронницею лісу..."
+            },
+            "it": {
+                "title": "Il Sussurro della Foresta",
+                "intro": "Nella lontana Foresta di Smeraldo viveva una giovane guaritrice di nome Lina. Conosceva ogni sentiero, ogni albero, e tutti gli abitanti del bosco si affidavano a lei... Lina raccoglieva erbe, curava gli animali feriti e si considerava la vera custode della foresta..."
+            }
+        }
+    }
+]
