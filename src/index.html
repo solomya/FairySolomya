@@ -21,6 +21,9 @@
 
 </head>
 
+<!--  Сайт с одним index.html, а остальные «страницы» подгружаются динамически в <main> без перезагрузки страницы — типичная структура для SPA (Single Page Application) или просто многостраничного сайта с AJAX/JS-подгрузкой. -->
+
+
 <body>
     <header class="header">
         <div class="logo-block">
@@ -47,13 +50,14 @@
             <ul class="mobile-menu-list" id="mobileMenuList"></ul>
         </div>
 
-
+        <!-- Ссылки на страницу формирует js, data-key ССЫЛКИ должен совпадать с именем страницы (home, about, reviews, и т.д.). -->
         <nav class="nav-links">
-            <a href="#" onclick="loadPage('home')" data-key="home">Home</a>
-            <a href="#" onclick="loadPage('about')" data-key="about">About</a>
-            <a href="#" onclick="loadPage('reviews')" data-key="reviews">Reviews</a>
-            <a href="#" onclick="loadPage('register')" data-key="register">Register</a>
+            <a href="#" data-key="home">Home</a>
+            <a href="#" data-key="about">About</a>
+            <a href="#" data-key="reviews">Reviews</a>
+            <a href="#" data-key="register">Register</a>
         </nav>
+
         <!-- Языковые кнопки для обычных экранов -->
         <div class="desktop-lang">
             <button class="lang-btn" onclick="setLang('ua')">UA</button>
@@ -65,45 +69,40 @@
 
     <div class="container">
         <!-- Боковое меню -->
+        <!-- Ссылки на страницу формирует js, data-key ССЫЛКИ должен совпадать с именем страницы (home, about, reviews, и т.д.). -->
+        <!-- Ссылка (teg a) не должна быть пустая - всегда пишем "title"-->
         <aside class="sidebar" id="sidebar">
             <ul>
                 <li class="collection-title" data-key="collection1">
                     <ul>
-                        <li class="story-title"><a href="#" onclick="loadPage('story101')" data-key="story101">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story101">title</a>
                         </li>
-                        <li class="story-title"><a href="#" onclick="loadPage('story102')" data-key="story102">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story102">title</a>
                         </li>
-                        <li class="story-title"><a href="#" onclick="loadPage('story103')" data-key="story103">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story103">title</a>
                         </li>
                     </ul>
                 </li>
                 <li class="collection-title" data-key="collection2">
                     <ul>
-                        <li class="story-title"><a href="#" onclick="loadPage('story201')" data-key="story201">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story201">title</a>
                         </li>
-                        <li class="story-title"><a href="#" onclick="loadPage('story202')" data-key="story202">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story202">title</a>
                         </li>
-                        <li class="story-title"><a href="#" onclick="loadPage('story203')" data-key="story203">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story203">title</a>
                         </li>
-                        <li class="story-title"><a href="#" onclick="loadPage('story204')" data-key="story204">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story204">title</a>
                         </li>
-                        <li class="story-title"><a href="#" onclick="loadPage('story205')" data-key="story205">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story205">title</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="collection-title" data-key="collection3">
                     <ul>
-                        <li class="story-title"><a href="#" onclick="loadPage('story301')" data-key="story301">story
-                                title</a>
+                        <li class="story-title"><a href="#" data-key="story301">title</a>
+                            <!-- <li class="story-title"><a href="#" data-key="story302">title</a> -->
+
                         </li>
                     </ul>
                 </li>
@@ -115,6 +114,9 @@
         </main>
     </div>
 
+    <button class="big-btn-universal up-btn" id="toTopBtn" data-key="upBtn">🔝Back to Top</button>
+
+
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-branding">
@@ -122,9 +124,9 @@
             </div>
             <p class="footer-copy" data-key="footerCopy">&copy; 2025 Волшебный мир Соломии. Все права защищены.</p>
             <div class="footer-links">
-                <div><a href="#" onclick="loadPage('privacy')" data-key="footerPriv">Политика конфиденциальности</a>
+                <div><a href="#" onclick="loadPage('privacy')" data-key="privacy">Политика конфиденциальности</a>
                 </div>
-                <div><a href="#" onclick="loadPage('contacts')" data-key="footerContacts">Контакты</a></div>
+                <div><a href="#" onclick="loadPage('contacts')" data-key="contacts">Контакты</a></div>
 
                 <div class="footer-social">
                     <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="icons/facebook.png"
@@ -139,10 +141,10 @@
     </footer>
 
     <div id="cookie-banner" class="cookie-banner">
-        <p class="cookie-text">We use cookies to improve the performance of our website.</p>
+        <p class="cookie-text" data-key="cookieText">We use cookies to improve the performance of our website.</p>
         <div class="cookie-buttons">
-            <button class="cookie-accept">Accept</button>
-            <button class="cookie-decline">Reject</button>
+            <button class="cookie-accept" id="cookie-accept" data-key="cookieBtnAcc">Accept</button>
+            <button class="cookie-decline" id="cookie-decline" data-key="cookieBtnDecl">Reject</button>
         </div>
     </div>
 

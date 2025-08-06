@@ -52,6 +52,10 @@ body {
 
 /* === БАЗОВЫЕ СТИЛИ === */
 
+.big-btn-universal {
+  @include btn-big-gradient;
+}
+
 body {
   background-color: #f8f3ef;
   color: $main-txt-color;
@@ -138,7 +142,6 @@ body {
 }
 
 /* Скрытие через класс для бургер-меню*/
-
 .hidden {
   display: none;
 }
@@ -182,7 +185,6 @@ body {
 }
 
 /* Подменю */
-
 .submenu {
   list-style: none;
   padding-left: 20px;
@@ -207,7 +209,6 @@ body {
 }
 
 /* По умолчанию прячем select и показываем кнопки языка (.desktop-lang) */
-
 .mobile-lang {
   display: none;
 }
@@ -443,6 +444,10 @@ body {
 .content-divider-img {
   max-width: 50%;
   margin: 1rem auto;
+}
+
+.up-btn {
+  margin-left: auto;
 }
 
 .site-footer {
@@ -731,6 +736,29 @@ body {
   background-color: #c4a87a;
 }
 
+.inline-container {
+  font-size: 0;
+
+  /* убираем пробелы между inline-block элементами */
+  .content-txt,
+  .review-cont {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.1 rem;
+    /* возвращаем нужный размер шрифта */
+    margin-right: 0.7rem;
+    /* расстояние между элементами */
+
+    a {
+      color: $second-txt-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 /* === Адаптивность === */
 @media (max-width: 600px) {
 
@@ -792,31 +820,6 @@ body {
   max-width: 40%;
 }
 
-.send-btn {
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 0 0.25rem;
-  background: linear-gradient(135deg, #a6845e, #d6bfa5);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #8a6c4a;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(139, 105, 64, 0.3);
-
-    /* тёплый мягкий свет */
-  }
-}
-
 .form-status {
   text-align: center;
   margin-top: 10px;
@@ -870,6 +873,108 @@ body {
 .fairy-card button:hover,
 .cookie-buttons button:hover {
   background-color: #bfa286;
+}
+
+// ===* Страница 404=== */
+.fairy-404 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .back-home {
+    width: 40%;
+    @include btn-big-gradient;
+    color: white;
+  }
+
+  .fairy-fly-zone {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin: 1rem;
+    overflow: visible;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/src/img/magicForest.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.7;
+      /* 👈 только фон */
+      z-index: 0;
+    }
+  }
+
+  .fairy-fly-zone>* {
+    position: relative;
+    z-index: 1;
+    /* 👈 всё содержимое — поверх фона */
+  }
+
+  .fairy-fly {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    animation: flyToTopLeft 3s ease-out forwards, floatIdle 2.5s ease-in-out infinite 3s;
+    z-index: 10;
+  }
+
+  // Для эффекта пыльцы
+  .fairy-sparkle {
+    position: absolute;
+    width: 0.7rem;
+    height: 0.7rem;
+    background: radial-gradient(circle, #ffd700, #ffcc33, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: sparkleFade 1s ease-out forwards;
+    box-shadow: 0 0 8px #ffd700aa;
+  }
+}
+
+/* 🚀 Анимация вылета в левый верхний угол */
+@keyframes flyToTopLeft {
+  0% {
+    bottom: 0;
+    right: 0;
+    transform: scale(0.7) rotate(20deg);
+    opacity: 0;
+  }
+
+  50% {
+    bottom: 50%;
+    right: 50%;
+    transform: scale(1.2) rotate(-10deg);
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 40%;
+    right: 50%;
+    transform: scale(1.2) rotate(-5deg);
+    opacity: 1;
+  }
+}
+
+// Пыльца
+@keyframes sparkleFade {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.5) translateY(-10px);
+    opacity: 0;
+  }
 }
 
 /* === АДАПТИВНЫЙ ДИЗАЙН === */

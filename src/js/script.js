@@ -4,6 +4,11 @@ let currentPage = 'home';  // хранит текущую страницу
 function loadPage(page) {
     currentPage = page;
 
+    // Обновлять hash при навигации
+    if (location.hash !== `#/${currentLang}/${page}`) {
+        history.replaceState(null, '', `#/${currentLang}/${page}`);
+    }
+
     // Удалить .active у всех ссылок из бокового и верхнего меню
     document.querySelectorAll('.sidebar a, .nav-links a').forEach(link => {
         link.classList.remove('active');
@@ -19,7 +24,10 @@ function loadPage(page) {
 
     // Загрузить HTML-контент страницы
     fetch(`pages/${page}.html`)
-        .then(res => res.text())
+        .then(res => {
+            if (!res.ok) throw new Error('Page not found');
+            return res.text();
+        })
         .then(html => {
             document.getElementById('content').innerHTML = html;
             loadTranslations();
@@ -38,8 +46,42 @@ function loadPage(page) {
             if (page === 'reviews') {
                 loadReviewPage();
             }
+        })
+
+        // Открыть страницу 404, если не удалось загрузить
+        .catch(() => {
+            fetch(`pages/404.html`)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+
+                    loadTranslations(); // перевод страницы 404
+
+                    // Ждём, пока .fairy-fly появится в DOM
+                    // requestAnimationFrame(() => {
+                    //     const fairy = document.querySelector('.fairy-fly');
+                    //     if (!fairy) return;
+
+                    //     let sparkleInterval;
+
+                    //     // создаём сразу пыльцу (не дожидаясь анимации, чтобы убедиться, что работает)
+                    //     sparkleInterval = setInterval(() => {
+                    //         createSparkleAtFairy(fairy);
+                    //     }, 100);
+
+                    //     // Останавливаем после анимации
+                    //     fairy.addEventListener('animationend', (e) => {
+                    //         if (e.animationName === 'flyToTopLeft') {
+                    //             clearInterval(sparkleInterval);
+                    //         }
+                    //     });
+                    // });
+                });
+
+            document.getElementById('backHomeBtn')?.setAttribute('href', `#/${currentLang}/home`);
+
         });
-}
+};
 
 function setLang(lang) {
     currentLang = lang;
@@ -53,6 +95,14 @@ function setLang(lang) {
 
     loadTranslations();    // перевести статичные элементы
     loadPage(currentPage); // перезагрузить текущий контент с новым языком
+
+    // Перегенерировать ссылки при смене языка
+    document.querySelectorAll('.nav-links a, .sidebar a, #mobileMenuList a').forEach(link => {
+        const key = link.getAttribute('data-key');
+        if (!key) return;
+        link.href = `#/${lang}/${key}`;
+    });
+
 }
 
 // Загрузка перевода из языковых json
@@ -381,11 +431,26 @@ function showNextReview() {
 
 // При загрузке страницы — выбрать язык из localStorage или по умолчанию, загрузить index
 document.addEventListener('DOMContentLoaded', () => {
+    const route = parseHashRoute();
     const savedLang = localStorage.getItem('lang');
-    if (savedLang) {
-        setLang(savedLang); // применит язык + подсветку
+
+    if (route) {
+        currentLang = route.lang;
+        currentPage = route.page;
     } else {
-        setLang('en'); // по умолчанию EN + подсветка
+        currentLang = savedLang || 'en';
+        currentPage = 'home';
+    }
+
+    setLang(currentLang);  // применит язык и подсветку
+    loadPage(currentPage); // загрузит нужную страницу
+});
+
+window.addEventListener('hashchange', () => {
+    const route = parseHashRoute();
+    if (route) {
+        if (route.lang !== currentLang) setLang(route.lang);
+        loadPage(route.page);
     }
 });
 
@@ -446,6 +511,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Клонируем ссылку
                 const clonedLink = storyLink.cloneNode(true);
+
+                // Автогенерация в мобильном меню
+                const key = storyLink.getAttribute('data-key');
+                clonedLink.href = `#/${currentLang}/${key}`;
+
                 storyItem.appendChild(clonedLink);
                 storyList.appendChild(storyItem);
             });
@@ -456,7 +526,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     generateMobileMenu();
-});
+
+    // Автогенерация ссылок в .nav-links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const key = link.getAttribute('data-key');
+        if (!key) return;
+        link.href = `#/${currentLang}/${key}`;
+    });
+
+    // Автогенерация ссылок в .sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        const key = link.getAttribute('data-key');
+        if (!key) return;
+        link.href = `#/${currentLang}/${key}`;
+    });
+
+}); function parseHashRoute() {
+    const hash = window.location.hash;
+    const match = hash.match(/^#\/([a-z]{2})\/([a-zA-Z0-9_-]+)$/);
+    if (match) {
+        return { lang: match[1], page: match[2] };
+    }
+    return null;
+};
+
+// парсинг хэша
+function parseHashRoute() {
+    const hash = window.location.hash;
+    const match = hash.match(/^#\/([a-z]{2})\/([a-zA-Z0-9_-]+)$/);
+    if (match) {
+        return { lang: match[1], page: match[2] };
+    }
+    return null;
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -494,3 +596,75 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Генерация "пыльцы" за феей
+function createSparkleAtFairy(fairy) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'fairy-sparkle';
+
+    const rect = fairy.getBoundingClientRect();
+    const parentRect = fairy.offsetParent.getBoundingClientRect();
+
+    sparkle.style.left = (rect.left - parentRect.left + fairy.offsetWidth / 2) + 'px';
+    sparkle.style.top = (rect.top - parentRect.top + fairy.offsetHeight / 2) + 'px';
+
+    fairy.offsetParent.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 1000); // удалить через 1 сек
+}
+
+// Кнопка Back to Top - размещается внизу страницы и при нажатии плавно прокручивает страницу вверх.
+// Показать кнопку при прокрутке вниз
+window.onscroll = function () {
+    const btn = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+// Прокрутка наверх при нажатии
+document.getElementById("toTopBtn").onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+// Функция для работы с cookie
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
+}
+
+function getCookie(name) {
+    const ca = decodeURIComponent(document.cookie).split(';');
+    name = name + "=";
+    for (let c of ca) {
+        while (c.charAt(0) === ' ') c = c.substring(1);
+        if (c.indexOf(name) === 0) return c.substring(name.length);
+    }
+    return "";
+}
+
+window.addEventListener("load", () => {
+    // Не показываем баннер, если пользователь уже выбрал
+    if (getCookie("cookieAccepted") || getCookie("cookieDeclined")) return;
+
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("cookie-accept");
+    const declineBtn = document.getElementById("cookie-decline");
+
+    banner.style.display = "flax";
+
+    acceptBtn.onclick = () => {
+        setCookie("cookieAccepted", "true", 30); // 30 дней
+        banner.style.display = "none";
+    };
+
+    declineBtn.onclick = () => {
+        setCookie("cookieDeclined", "true", 1); // 1 день
+        banner.style.display = "none";
+    };
+});
