@@ -454,26 +454,28 @@ window.addEventListener('hashchange', () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const banner = document.getElementById("cookie-banner");
-    const acceptBtn = document.querySelector(".cookie-accept");
-    const declineBtn = document.querySelector(".cookie-decline");
+// Обработчик для баннера cookie через localStorage (не может отсчитать дни)
+// Убираем, т.к. делаем через cookie
+// document.addEventListener("DOMContentLoaded", () => {
+//     const banner = document.getElementById("cookie-banner");
+//     const acceptBtn = document.querySelector(".cookie-accept");
+//     const declineBtn = document.querySelector(".cookie-decline");
 
-    // Показываем баннер, если ещё не было выбора
-    if (!localStorage.getItem("cookieConsent")) {
-        banner.style.display = "flex";
-    }
+//     // Показываем баннер, если ещё не было выбора
+//     if (!localStorage.getItem("cookieConsent")) {
+//         banner.style.display = "flex";
+//     }
 
-    acceptBtn.addEventListener("click", () => {
-        localStorage.setItem("cookieConsent", "accepted");
-        banner.style.display = "none";
-    });
+//     acceptBtn.addEventListener("click", () => {
+//         localStorage.setItem("cookieConsent", "accepted");
+//         banner.style.display = "none";
+//     });
 
-    declineBtn.addEventListener("click", () => {
-        localStorage.setItem("cookieConsent", "declined");
-        banner.style.display = "none";
-    });
-});
+//     declineBtn.addEventListener("click", () => {
+//         localStorage.setItem("cookieConsent", "declined");
+//         banner.style.display = "none";
+//     });
+// });
 
 
 // Динамически генерирует бургер-меню из sidebar
@@ -632,12 +634,15 @@ document.getElementById("toTopBtn").onclick = function () {
 };
 
 // Функция для работы с cookie
+
+// Установка cookie
 function setCookie(name, value, days) {
     const d = new Date();
     d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
     document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
 }
 
+// Получение cookie
 function getCookie(name) {
     const ca = decodeURIComponent(document.cookie).split(';');
     name = name + "=";
@@ -649,14 +654,24 @@ function getCookie(name) {
 }
 
 window.addEventListener("load", () => {
-    // Не показываем баннер, если пользователь уже выбрал
-    if (getCookie("cookieAccepted") || getCookie("cookieDeclined")) return;
-
     const banner = document.getElementById("cookie-banner");
     const acceptBtn = document.getElementById("cookie-accept");
     const declineBtn = document.getElementById("cookie-decline");
 
-    banner.style.display = "flax";
+    if (getCookie("cookieAccepted") !== "") {
+        // Согласие — скрываем баннер
+        banner.style.display = "none";
+        return;
+    }
+
+    if (getCookie("cookieDeclined") !== "") {
+        // Отказ (на 1 день) — скрываем баннер
+        banner.style.display = "none";
+        return;
+    }
+
+    // Если куков нет — показываем баннер и навешиваем кнопки
+    banner.style.display = "flex";
 
     acceptBtn.onclick = () => {
         setCookie("cookieAccepted", "true", 30); // 30 дней
@@ -668,3 +683,4 @@ window.addEventListener("load", () => {
         banner.style.display = "none";
     };
 });
+// Конец функции для работы с cookie
