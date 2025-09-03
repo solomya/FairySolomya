@@ -1,10 +1,10 @@
 let currentLang = 'en';
-let currentPage = 'home';  // хранит текущую страницу
+let currentPage = 'home';  // save the current page
 
 function loadPage(page) {
     currentPage = page;
 
-    // Обновлять hash при навигации
+    // Update hash when navigating
     if (location.hash !== `#/${currentLang}/${page}`) {
         history.replaceState(null, '', `#/${currentLang}/${page}`);
     }
@@ -32,6 +32,9 @@ function loadPage(page) {
             document.getElementById('content').innerHTML = html;
             loadTranslations();
 
+            // Сброс скролла вверх
+            window.scrollTo({ top: 0, behavior: "auto" });
+
             // Если загружена страница контактов — инициализировать форму
             if (page === 'contacts') {
                 setupContactForm();
@@ -56,33 +59,13 @@ function loadPage(page) {
                     document.getElementById('content').innerHTML = html;
 
                     loadTranslations(); // перевод страницы 404
-
-                    // Ждём, пока .fairy-fly появится в DOM
-                    // requestAnimationFrame(() => {
-                    //     const fairy = document.querySelector('.fairy-fly');
-                    //     if (!fairy) return;
-
-                    //     let sparkleInterval;
-
-                    //     // создаём сразу пыльцу (не дожидаясь анимации, чтобы убедиться, что работает)
-                    //     sparkleInterval = setInterval(() => {
-                    //         createSparkleAtFairy(fairy);
-                    //     }, 100);
-
-                    //     // Останавливаем после анимации
-                    //     fairy.addEventListener('animationend', (e) => {
-                    //         if (e.animationName === 'flyToTopLeft') {
-                    //             clearInterval(sparkleInterval);
-                    //         }
-                    //     });
-                    // });
                 });
 
             document.getElementById('backHomeBtn')?.setAttribute('href', `#/${currentLang}/home`);
-
         });
 };
 
+// Смена языка по клику на кнопки
 function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
@@ -92,6 +75,12 @@ function setLang(lang) {
         const btnLang = btn.textContent.trim().toLowerCase();
         btn.classList.toggle('active', btnLang === lang);
     });
+
+    // ✅ Устанавливаем выбранное значение в select (mobile)
+    const langSelect = document.getElementById("language-select");
+    if (langSelect) {
+        langSelect.value = lang;
+    }
 
     loadTranslations();    // перевести статичные элементы
     loadPage(currentPage); // перезагрузить текущий контент с новым языком
@@ -485,22 +474,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const sidebarCollections = sidebar.querySelectorAll("li.collection-title");
 
     function generateMobileMenu() {
+        mobileMenuList.innerHTML = ""; // очищаем перед генерацией
+
         const sidebarCollections = sidebar.querySelectorAll("li.collection-title");
 
         sidebarCollections.forEach((collection) => {
-            const collectionTitle = collection.childNodes[0].textContent.trim();
             const dataKey = collection.getAttribute("data-key");
             const stories = collection.querySelectorAll("li.story-title");
 
-            // Создаём элемент коллекции
+            // Создаём элемент коллекции (заголовок)
             const collectionItem = document.createElement("li");
-            collectionItem.textContent = collectionTitle;
             collectionItem.classList.add("mobile-collection-title");
-
-            // Копируем data-key
             if (dataKey) {
                 collectionItem.setAttribute("data-key", dataKey);
             }
+            collectionItem.textContent = "title"; // временный текст (переведётся через loadTranslations)
 
             // Создаём вложенный список для историй
             const storyList = document.createElement("ul");
@@ -525,6 +513,8 @@ document.addEventListener("DOMContentLoaded", () => {
             collectionItem.appendChild(storyList);
             mobileMenuList.appendChild(collectionItem);
         });
+
+        loadTranslations(); // сразу переводим
     }
 
     generateMobileMenu();

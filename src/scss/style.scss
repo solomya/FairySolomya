@@ -309,12 +309,35 @@ body {
   max-width: 20rem;
   padding: 1rem;
   margin: 0 auto;
+
+  /* 📱 Для планшетов и моб. - на всю ширину экрана */
+  @media (max-width: 820px),
+  (max-width: 480px) {
+    & {
+      max-width: 100%;
+    }
+  }
+
 }
 
 .tale-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1.5rem;
+
+  /* 📱 Планшеты: 2 колонки */
+  @media (max-width: 820px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 📱 Мобильные: 1 колонка */
+    @media (max-width: 480px) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 }
 
 .fairy-card {
@@ -980,7 +1003,8 @@ body {
 
 /* === АДАПТИВНЫЙ ДИЗАЙН === */
 /* Для узких экранов меняем: показываем select и бургер, прячем кнопки */
-@media (max-width: 768px),
+@media (max-width: 820px),
+(max-width: 768px),
 (max-width: 480px) {
 
 

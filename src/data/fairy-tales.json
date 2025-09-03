@@ -24,7 +24,7 @@
     },
     {
         "id": "story102",
-        "date": "2025-07-12",
+        "date": "2025-09-02",
         "image": "img/story102/unicornPresent.jpg",
         "translations": {
             "ru": {
@@ -93,16 +93,16 @@
     },
     {
         "id": "story202",
-        "date": "2025-08-01",
+        "date": "2025-06-01",
         "image": "img/story202/Lina.jpg",
         "translations": {
             "ru": {
                 "title": "Шёпот леса",
-                "intro": "ВВ далёком Изумрудном лесу жила молодая целительница Лина. Она знала каждую тропинку, каждое дерево, и все лесные жители доверяли ей... Лина собирала травы, лечила раненых зверей и считала себя настоящей хранительницей леса..."
+                "intro": "В далёком Изумрудном лесу жила молодая целительница Лина. Она знала каждую тропинку, каждое дерево, и все лесные жители доверяли ей... Лина собирала травы, лечила раненых зверей и считала себя настоящей хранительницей леса..."
             },
             "en": {
                 "title": "The Forest's Whisper",
-                "intro": "IIn the distant Emerald Forest lived a young healer named Lina. She knew every path, every tree, and all the forest dwellers trusted her... Lina gathered herbs, healed wounded animals, and considered herself a true guardian of the forest..."
+                "intro": "In the distant Emerald Forest lived a young healer named Lina. She knew every path, every tree, and all the forest dwellers trusted her... Lina gathered herbs, healed wounded animals, and considered herself a true guardian of the forest..."
             },
             "ua": {
                 "title": "Шепіт лісу",
@@ -111,6 +111,29 @@
             "it": {
                 "title": "Il Sussurro della Foresta",
                 "intro": "Nella lontana Foresta di Smeraldo viveva una giovane guaritrice di nome Lina. Conosceva ogni sentiero, ogni albero, e tutti gli abitanti del bosco si affidavano a lei... Lina raccoglieva erbe, curava gli animali feriti e si considerava la vera custode della foresta..."
+            }
+        }
+    },
+    {
+        "id": "story302",
+        "date": "2025-09-03",
+        "image": "img/story302/ReinarAndCat.jpg",
+        "translations": {
+            "ru": {
+                "title": "Встреча с аштари",
+                "intro": "Снова Рейнар отправился в дорогу. Его путь лежал в Туманные горы, где жил великий маг Демитарис. На исходе третьего дня, когда солнце уже садилось, Рейнар шёл через лес и вдруг услышал слабое, жалобное мяуканье. Свернув с тропы, он обнаружил под большим дубом крошечного котёнка..."
+            },
+            "en": {
+                "title": "Meeting the Ashtari",
+                "intro": "Once again, Reinar set out on the road. His path led to the Misty Mountains, where the great mage Demitaris lived. At the end of the third day, when the sun was already setting, Reinar was walking through the forest and suddenly heard a weak, pitiful meowing. Turning off the path, he discovered a tiny kitten under a large oak tree..."
+            },
+            "ua": {
+                "title": "Зустріч з аштарі",
+                "intro": "нову Рейнар вирушив у дорогу. Його шлях лежав до Туманних гір, де жив великий маг Демітаріс. Наприкінці третього дня, коли сонце вже заходило, Рейнар ішов через ліс і раптом почув слабке, жалісливе нявкання. Звернувши зі стежки, він побачив під великим дубом крихітне кошеня..."
+            },
+            "it": {
+                "title": "L'incontro con l'ashtari",
+                "intro": "Ancora una volta Reinar si mise in viaggio. La sua strada conduceva alle Montagne Nebbiose, dove viveva il grande mago Demitaris. Al tramonto del terzo giorno, mentre Reinar camminava attraverso la foresta, sentì improvvisamente un debole e lamentoso miagolio. Deviando dal sentiero, trovò sotto una grande quercia un minuscolo gattino..."
             }
         }
     }
