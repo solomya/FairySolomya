@@ -254,6 +254,12 @@ function createFairyCard(tale, lang) {
 
     const isNew = isNewTale(tale);
 
+    // 👉 Разбиваем intro на абзацы
+    const introHtml = intro
+        .split("\n")
+        .map(line => `<p>${line.trim()}</p>`)
+        .join("");
+
     card.innerHTML = `
       ${isNew ? `<div class="new-badge">${newBadgeText}</div>` : ''}      
       <img src="${tale.image}" alt="${title}">

@@ -129,11 +129,34 @@
             },
             "ua": {
                 "title": "Зустріч з аштарі",
-                "intro": "нову Рейнар вирушив у дорогу. Його шлях лежав до Туманних гір, де жив великий маг Демітаріс. Наприкінці третього дня, коли сонце вже заходило, Рейнар ішов через ліс і раптом почув слабке, жалісливе нявкання. Звернувши зі стежки, він побачив під великим дубом крихітне кошеня..."
+                "intro": "Знову Рейнар вирушив у дорогу. Його шлях лежав до Туманних гір, де жив великий маг Демітаріс. Наприкінці третього дня, коли сонце вже заходило, Рейнар ішов через ліс і раптом почув слабке, жалісливе нявкання. Звернувши зі стежки, він побачив під великим дубом крихітне кошеня..."
             },
             "it": {
                 "title": "L'incontro con l'ashtari",
                 "intro": "Ancora una volta Reinar si mise in viaggio. La sua strada conduceva alle Montagne Nebbiose, dove viveva il grande mago Demitaris. Al tramonto del terzo giorno, mentre Reinar camminava attraverso la foresta, sentì improvvisamente un debole e lamentoso miagolio. Deviando dal sentiero, trovò sotto una grande quercia un minuscolo gattino..."
+            }
+        }
+    },
+    {
+        "id": "story303",
+        "date": "2025-09-04",
+        "image": "img/story303/ZulasStory.jpg",
+        "translations": {
+            "ru": {
+                "title": "История Зулы",
+                "intro": "Не один день Рейнар и Зула блуждали по бескрайнему заснеженному плато в поисках дома великого мага Демитариса. В один из вечеров, когда они устроились на ночлег в небольшой пещере, мальчик сидел, укутавшись в плащ, и задумчиво смотрел на огонь. \n — Зула, — тихо произнёс он, — ты обещала рассказать о себе. \n Пантера долго молчала, словно решая, с чего начать эту трудную историю. \n — Хорошо, — наконец сказала она. — Ты имеешь право знать..."
+            },
+            "en": {
+                "title": "Zula's Story",
+                "intro": "For many days, Reynar and Zula wandered across the endless snowy plateau in search of the home of the great magician Demitaris. One evening, when they settled down for the night in a small cave, the boy sat wrapped in a cloak and thoughtfully looked at the fire. \"Zula,\" he said quietly, \"you promised to tell me about yourself.\" \n The panther was silent for a long time, as if deciding where to begin this difficult story. \n \"Okay,\" she finally said. \"You have the right to know.\"..."
+            },
+            "ua": {
+                "title": "Історія Зули",
+                "intro": "Не один день Рейнар і Зула блукали безкрайнім засніженим плато в пошуках будинку великого мага Демітаріса. Одного вечора, коли вони влаштувалися на нічліг у невеликій печері, хлопчик сидів, закутавшись у плащ, і задумливо дивився на вогонь. — Зуло, — тихо промовив він, — ти обіцяла розповісти про себе. Пантера довго мовчала, ніби вирішуючи, з чого почати цю важку історію. — Добре, — нарешті сказала вона. - Ти маєш право знати..."
+            },
+            "it": {
+                "title": "La Storia di Zula",
+                "intro": "Per molti giorni, Reynar e Zula vagarono per l'infinito altopiano innevato alla ricerca della dimora del grande mago Demitaris. Una sera, quando si sistemarono per la notte in una piccola grotta, il ragazzo sedette avvolto in un mantello e guardò pensieroso il fuoco. \"Zula\", disse a bassa voce, \"hai promesso di raccontarmi di te.\" La pantera rimase in silenzio a lungo, come se stesse decidendo da dove cominciare quella difficile storia. \"Va bene\", disse infine. \"Hai il diritto di sapere...\" "
             }
         }
     }
