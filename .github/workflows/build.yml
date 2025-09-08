@@ -1,7 +1,7 @@
 name: Initial build dist
 
 on:
-  workflow_dispatch:   # запуск руками из GitHub Actions
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,7 +24,8 @@ jobs:
         run: npm run build
 
       - name: Upload dist as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
+          include-hidden-files: false  # при необходимости можно установить true
