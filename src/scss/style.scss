@@ -623,7 +623,7 @@ body {
   justify-content: center;
   gap: 1rem;
   max-width: 700px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 2rem;
   background-color: $bg-lite;
   border-radius: 16px;
@@ -636,7 +636,7 @@ body {
 }
 
 .review-card {
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 350px);
   background-color: $bg-mid;
   border-radius: 12px;
   padding: 1.5rem;
@@ -711,9 +711,11 @@ body {
   /* Обрезка текста */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 10;
+  -webkit-line-clamp: 6;
+  /* Показывать только 6 строк */
   overflow: hidden;
-  line-clamp: 10;
+  line-clamp: 6;
+  /* Показывать только 6 строк */
 }
 
 .review-story a {
@@ -743,6 +745,8 @@ body {
 /* Кнопки карусели */
 #prev-review,
 #next-review {
+  height: fit-content;
+  width: fit-content;
   background-color: $bg-btn;
   color: white;
   border: none;
