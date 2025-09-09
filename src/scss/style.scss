@@ -624,7 +624,7 @@ body {
   gap: 1rem;
   max-width: 700px;
   margin: 1rem auto;
-  padding: 2rem;
+  padding: 1rem;
   background-color: $bg-lite;
   border-radius: 16px;
   box-shadow: 0 2px 10px rgba(100, 75, 50, 0.1);
@@ -703,19 +703,18 @@ body {
 }
 
 .review-text {
+  min-height: 7.5rem;
   font-size: 1.1rem;
-  line-height: 1.3rem;
+  line-height: 1.2rem;
   text-align: justify;
   margin-bottom: 1rem;
 
   /* Обрезка текста */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-  /* Показывать только 6 строк */
+  -webkit-line-clamp: 5;
   overflow: hidden;
-  line-clamp: 6;
-  /* Показывать только 6 строк */
+  line-clamp: 5;
 }
 
 .review-story a {
