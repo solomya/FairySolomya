@@ -242,7 +242,7 @@ function createFairyCard(tale, lang) {
         ru: "Читать",
         en: "Read",
         ua: "Читати",
-        it: "legere"
+        it: "Leggere"
     }[lang] || "Read";
 
     const newBadgeText = {
