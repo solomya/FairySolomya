@@ -1,0 +1,34 @@
+<div class="content-story">
+    <h1 class="content-title" data-key="contactsTitle">Контакты</h1>
+    <p class="comment-block" data-key="contactsDescr1">Если у вас есть вопросы, пожелания или предложения —
+        пожалуйста,
+        свяжитесь с нами!</p>
+
+    <div class="content-txt">
+        <p><strong>Email:</strong> <a href="mailto:fairysolomya@gmail.com">fairysolomya@gmail.com</a></p>
+        <p><strong>Telegram:</strong> <a href="https://t.me/fairysolomya" target="_blank">@fairysolomya</a></p>
+    </div>
+
+    <p class="comment-block" data-key="contactsDescr2">Или отправьте сообщение онлайн:</p>
+
+    <section class="contact-section" id="contact-section">
+        <form id="contact-form" class="contact-form">
+            <input type="text" name="name" placeholder="Name" data-i18n-placeholder="contacts.name" required>
+            <input type="email" name="email" placeholder="e-mail" data-i18n-placeholder="contacts.email" required>
+            <textarea name="message" rows="5" placeholder="Your message" data-i18n-placeholder="contacts.message"
+                required></textarea>
+
+            <!-- Блок для проверочного вопроса -->
+            <div class="captcha-block">
+                <div class="captcha-act" data-key="captchaAct">Посчитай:</div>
+                <label id="captcha-question" for="check-answer"></label>
+                <input type="text" id="check-answer" name="captcha_answer" placeholder="Answer" required>
+            </div>
+
+            <button type="submit" class="big-btn-universal" data-key="contactsSend">Отправить</button>
+        </form>
+        <!-- Отправка сообщений реализована через emailjs.com: accaunt fairysolomya -->
+
+        <div id="form-status" class="form-status"></div>
+    </section>
+</div>

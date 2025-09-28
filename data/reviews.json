@@ -1,0 +1,86 @@
+[
+    {
+        "name": {
+            "ru": "Анна",
+            "ua": "Анна",
+            "en": "Anna",
+            "it": "Anna"
+        },
+        "position": {
+            "ru": "11 лет",
+            "ua": "11 років",
+            "en": "11 years old",
+            "it": "11 anni"
+        },
+        "story": {
+            "ru": "Путь домой для лунного единорога",
+            "ua": "Шлях додому для місячного єдинорога",
+            "en": "The Moon Unicorn's Journey Home",
+            "it": "La Strada di Casa per l'Unicorno Lunare"
+        },
+        "storyId": "story101",
+        "stars": 5,
+        "text": {
+            "ru": "Обожаю эту сказку! Лунарис такой милый и грустный, мне его очень жалко было в начале. А Айлиара просто супер! Она такая умная и добрая, хочется быть на неё похожей. Больше всего понравилось, как она перехитрила каменных горгулий с маками - это было очень круто! Лунный единорог описан так красиво - с серебристой гривой и звёздочками! Я даже нарисовала его в своём блокноте. А склон Полуночного света звучит как место из мечты, где всегда светит луна. \n Очень хочется ещё истории про Айлиару! Может, она встретит дракона или русалку? Всем советую прочитать! ",
+            "ua": "Люблю цю казку! Лунаріс такий милий та сумний, мені його дуже шкода було на початку. А Айліара просто супер! Вона така розумна і добра, хочеться бути схожою на неї. Найбільше сподобалося, як вона перехитрила кам'яні горгулії з маками - це було дуже круто! Місячний єдиноріг описаний так красиво - зі сріблястою гривою та зірочками! Я навіть намалювала його у своєму блокноті. А схил опівнічного світла звучить як місце з мрії, де завжди світить місяць. \n Дуже хочеться ще історії про Айліара! Може, вона зустріне дракона чи русалку? Всім раджу прочитати!",
+            "en": "I love this story! Lunaris is so cute and sad, I felt so sorry for him at the beginning. And Ailiara is just super! She is so smart and kind, I want to be like her. Most of all I liked how she outsmarted the stone gargoyles with poppies - it was really cool! The Moon Unicorn is described so beautifully - with a silver mane and stars! I even drew it in my notebook. And the slope of the Midnight Light sounds like a dream place where the moon always shines. \n I really want another story about Ailiara! Maybe she will meet a dragon or a mermaid? I advise everyone to read it!",
+            "it": "Adoro questa storia! Lunaris è così carino e triste, mi è dispiaciuto tantissimo per lui all'inizio. E Ailiara è semplicemente fantastica! È così intelligente e gentile, vorrei essere come lei. Soprattutto mi è piaciuto come ha superato in astuzia i gargoyle di pietra con i papaveri: è stato davvero fantastico! L'Unicorno della Luna è descritto così bene: con la criniera argentata e le stelle! L'ho persino disegnato sul mio quaderno. E il pendio della Luce di Mezzanotte sembra un luogo da sogno dove la luna splende sempre. \n Vorrei tanto un'altra storia su Ailiara! Magari incontrerà un drago o una sirena? Consiglio a tutti di leggerla!."
+        }
+    },
+    {
+        "name": {
+            "ru": "София",
+            "ua": "Софія",
+            "en": "Sofia",
+            "it": "Sofia"
+        },
+        "position": {
+            "ru": "Мама 2 детей - 7 и 11 лет",
+            "ua": "Мама 2 дітей - 7 та 11 років",
+            "en": "Mom of 2 children - 7 and 11 years old",
+            "it": "Mamma di 2 figli - 7 e 11 anni"
+        },
+        "story": {
+            "ru": "Сказка о золотой бабочке",
+            "ua": "Казка про золотого метелика",
+            "en": "The Tale of the Golden Butterfly",
+            "it": "La Favola della Farfalla Dorata"
+        },
+        "storyId": "story101",
+        "stars": 5,
+        "text": {
+            "ru": "Читали сказку перед сном — дети в восторге! Атмосфера и приключения просто волшебные.",
+            "ua": "Читали казку перед сном – діти у захваті! Атмосфера та пригоди просто чарівні.",
+            "en": "We read a fairy tale before bed - the children were delighted! The atmosphere and adventures were simply magical.",
+            "it": "Abbiamo letto una fiaba prima di andare a letto: i bambini erano felicissimi! L'atmosfera e le avventure erano semplicemente magiche."
+        }
+    },
+    {
+        "name": {
+            "ru": "Шерлин",
+            "ua": "Шерлін",
+            "en": "Sherlin",
+            "it": "Sherlin"
+        },
+        "position": {
+            "ru": "Мама 2 близняшек 5 лет",
+            "ua": "Мама 2 близнючок 5 років",
+            "en": "Mother of 2 twin girls 5 years old",
+            "it": "Mamma di 2 gemell di 5 anni"
+        },
+        "story": {
+            "ru": "Путь домой для лунного единорога",
+            "ua": "Шлях додому для місячного єдинорога",
+            "en": "The Moon Unicorn's Journey Home",
+            "it": "La Strada di Casa per l'Unicorno Lunare"
+        },
+        "storyId": "story2",
+        "stars": 5,
+        "text": {
+            "ru": "Совершенно очарательная сказка! Читали с детьми ночь уже несколько раз, и каждый раз они просят перечитать снова. Особенно понравилась главная героиня, это  — замечательный пример для подражания. Она добрая, но не наивная, смелая, но осторожная. Показывает детям, что помогать другим — это не только правильно, но и может быть увлекательным приключением. Мне нравится, как автор показал, что иногда проблемы можно решить не силой, а умом и находчивостью. Волшебный мир описан  живо и красочно, что хочется там оказаться. Сонная поляна с цветами дремоты, Туманный лес с духами заблудших путников, Долина эха — каждое место запоминается и создает атмосферу настоящего волшебства. Особенно впечатлил склон Полуночного света, где живут лунные единороги — такое поэтичное описание! Приключения продуманы и логичны. Каждое препятствие требует своего решения, и эти решения учат детей думать творчески. Язык сказки красивый, но не перегруженный — дети понимают без труда. Читается легко и увлекательно.",
+            "ua": "Цілком чарівна казка! Читали з дітьми ніч вже кілька разів, і щоразу просять перечитати знову. Особливо сподобалася головна героїня, це чудовий приклад для наслідування. Вона добра, але не наївна, смілива, але обережна. Показує дітям, що допомагати іншим — це не тільки правильно, а й може бути цікавою пригодою. Мені подобається, як автор показав, що іноді проблеми можна вирішити не силою, а розумом та винахідливістю. Чарівний світ описаний жваво та барвисто, що хочеться там опинитися. Сонна галявина з квітами дрімоти, Туманний ліс з духами заблукалих мандрівників, Долина луни — кожне місце запам'ятовується і створює атмосферу справжнього чарівництва. Особливо вразив схил опівнічного світла, де живуть місячні єдинороги — такий поетичний опис! Пригоди продумані та логічні. Кожна перешкода потребує свого рішення, і ці вчать дітей думати творчо. Мова казки гарна, але не перевантажена — діти розуміють легко. Читається легко та захоплююче.",
+            "en": "Absolutely charming fairy tale! We have read it to the children several times already, and each time they ask to read it again. I especially liked the main character, she is a wonderful role model. She is kind, but not naive, brave, but careful. She shows children that helping others is not only right, but can also be an exciting adventure. I like how the author showed that sometimes problems can be solved not by force, but by intelligence and resourcefulness. The magical world is described vividly and colorfully, that you want to be there. Sleepy meadow with flowers of drowsiness, Misty forest with spirits of lost travelers, Valley of Echoes - each place is memorable and creates an atmosphere of real magic. I was especially impressed by the slope of Midnight Light, where the moon unicorns live - such a poetic description! The adventures are thought out and logical. Each obstacle requires its own solution, and these solutions teach children to think creatively. The language of the fairy tale is beautiful, but not overloaded - children understand it without difficulty. It's easy and fascinating to read.",
+            "it": "Una fiaba assolutamente incantevole! L'abbiamo già letta ai bambini diverse volte e ogni volta chiedono di rileggerla. Mi è piaciuta particolarmente la protagonista, è un modello meraviglioso. È gentile, ma non ingenua, coraggiosa, ma attenta. Mostra ai bambini che aiutare gli altri non è solo giusto, ma può anche essere un'avventura emozionante. Mi piace come l'autore abbia dimostrato che a volte i problemi possono essere risolti non con la forza, ma con l'intelligenza e l'intraprendenza. Il mondo magico è descritto in modo vivido e colorato, tanto che si desidera essere lì. Prato sonnolento con i fiori della sonnolenza, foresta nebbiosa con gli spiriti dei viaggiatori perduti, Valle degli Echi: ogni luogo è memorabile e crea un'atmosfera di vera magia. Sono rimasta particolarmente colpita dal pendio di Midnight Light, dove vivono gli unicorni della luna: una descrizione davvero poetica! Le avventure sono ponderate e logiche. Ogni ostacolo richiede una sua soluzione, e queste soluzioni insegnano ai bambini a pensare in modo creativo. Il linguaggio della fiaba è bello, ma non sovraccarico: i bambini lo capiscono senza difficoltà. È facile e affascinante da leggere."
+        }
+    }
+]
